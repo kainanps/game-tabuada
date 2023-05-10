@@ -1,0 +1,291 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+.main{
+    width: 600px;
+    background-color: #91e4ff;
+    border-radius: 10px;
+    box-shadow: 15px 15px 0 0 #53bde1, 13px 13px 0 0 #53bde1, 11px 11px 0 0 #53bde1, 9px 9px 0 0 #53bde1, 7px 7px 0 0 #53bde1, 5px 5px 0 0 #53bde1, 3px 3px 0 0 #53bde1, 1px 1px 0 0 #53bde1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.width-default{
+    width: 400px;
+    text-align: center;
+}
+
+.buttons-operador{
+    display: inline-block;
+}
+
+.operador-btn,
+#iniciar, #reiniciar, #parar {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#reiniciar{
+    background-color: #df3b87;
+}
+
+#reiniciar:hover{
+    background-color: #ba1964;
+}
+
+#parar{
+    background-color: rgb(251, 29, 29);
+}
+
+.operador-btn:hover,
+#iniciar:hover {
+    background-color: #0b5ed7;
+}
+
+/* estilo para botão selecionado */
+.operador-btn.selected {
+    background-color: #008CBA;
+    /* cor de seleção */
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    margin: 15% auto;
+    padding: 20px;
+    width: 60%;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 36px;
+    font-weight: 600;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.input-box {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s;
+}
+
+.input-box:focus {
+    outline: none;
+    border-color: #0d6efd;
+}
+
+.expressao {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.number1,
+.number2 {
+    color: #333;
+}
+
+.operator-symbol {
+    color: #f00;
+}
+
+.resposta-input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.verificar-btn {
+    padding: 5px 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.verificar-btn:hover {
+    background-color: #3e8e41;
+}
+
+.resposta-input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.verificar-btn {
+    padding: 5px 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.verificar-btn:hover {
+    background-color: #3e8e41;
+}
+
+.resposta-input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.verificar-btn {
+    padding: 5px 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.verificar-btn:hover {
+    background-color: #3e8e41;
+}
+
+.respostas-corretas,
+.respostas-erradas {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    width: 600px;
+    border-radius: 10px;
+}
+
+.total-respotas-corretas,
+.total-respotas-erradas {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.respostas-corretas p:nth-child(1),
+.respostas-erradas p:nth-child(1) {
+    display: block;
+    border: none;
+    text-align: center;
+}
+
+.respostas-corretas p,
+.respostas-erradas p {
+    margin: 5px;
+    padding: 2px;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+
+.timer {
+    width: 300px;
+    height: 2px;
+    background-color: #ccc;
+}
+
+.timer-bar {
+    height: 100%;
+    width: 0;
+    background-color: blue;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none;
+}
+
+.custom-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.custom-modal h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.custom-modal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.custom-modal-close {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-modal-close:hover {
+    background-color: #555;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Jogo de Matemática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="box-title width-default">
+            <h1>Jogo da tabuada</h1>
+        </div>
+    
+        <div id="operador width-default">
+            <p>Escolha um operador:</p>
+            <div class="buttons-operador">
+                <button type="button" class="operador-btn" id="soma">+</button>
+                <button type="button" class="operador-btn" id="subtracao">-</button>
+                <button type="button" class="operador-btn" id="multiplicacao">*</button>
+                <button type="button" class="operador-btn" id="divisao">/</button>
+            </div>
+        </div>
+        <div class="width-default">
+            <p>Digite o tempo que você precisa:</p>
+            <input type="number" min="1" class="input-box" placeholder="Tempo em segundos" id="time">
+        </div>
+        <div class="width-default">
+            <p>Digite o número de repetições que irá fazer:</p>
+            <input type="number" min="1" class="input-box" placeholder="Número de repetições" id="repeticoes">
+        </div>
+        <div class="buttons-start width-default">
+            <input type="button" id="iniciar" value="Iniciar">
+            <input type="button" id="reiniciar" value="Reiniciar">
+            <input type="button" id="parar" value="Parar">
+        </div>
+    
+        <div class="timer">
+            <div class="timer-bar"></div>
+        </div>
+
+        <div class="box-expressao width-default">
+            <p class="expressao">
+                <span class="number1"></span>
+                <span class="operator-symbol"></span>
+                <span class="number2"></span>
+            </p>
+        </div>
+
+        <div class="box-verificar width-default">
+            <input type="number" id="resposta" disabled class="resposta-input input-box">
+            <button type="submit" class="verificar-btn">Verificar</button>
+        </div>
+        
+        
+        <div id="resultado"></div>
+        
+        <div class="respostas-corretas">
+            <p class="total-respotas-corretas"></p>
+        </div>
+        
+        <div class="respostas-erradas">
+            <p class="total-respotas-erradas"></p>
+        </div>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <p>Por favor, selecione um operador e defina o tempo e o número de repetições antes de iniciar o jogo.</p>
+            </div>
+        </div>
+        <div class="custom-modal" id="perdeu">
+            <div class="custom-modal-content">
+                <h2>Você perdeu!</h2>
+                <p>Tente novamente :(</p>
+                <button class="custom-modal-close">Fechar</button>
+            </div>
+        </div>
+        <div class="custom-modal" id="venceu">
+            <div class="custom-modal-content">
+                <h2>Você venceu!</h2>
+                <p>Tente com um tempo menor!</p>
+                <button class="custom-modal-close">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="expression.js"></script>
+</body>
+
+</html>
